@@ -6,4 +6,5 @@ datetime
 meteostat 
 keras
 opencv-python
+tensorflow
 streamlit
