@@ -5,5 +5,5 @@ requests
 datetime 
 meteostat 
 keras
-cv2
+opencv-python
 streamlit
