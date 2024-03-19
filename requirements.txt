@@ -1,6 +1,6 @@
 pickle
 pandas 
-numpy as np
+numpy
 geopy
 requests
 datetime 
