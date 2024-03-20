@@ -130,13 +130,13 @@ def get_best_crop():
     for crop in crops:
         if crop=='Jowar':
             predicted_yield = predict_yield1(area, temperature, precipitation, humidity,soil_type, district, crop, season)
-            st.write(f'\nJowar predicted yield: {predicted_yield}')
+            st.write(f'\nJowar predicted yield: {predicted_yield*1000}')
         if crop=='Wheat':
             predicted_yield = predict_yield2(area, temperature, precipitation, humidity,soil_type, district, crop, season)
-            st.write(f'\nWheat predicted yield: {predicted_yield}')
+            st.write(f'\nWheat predicted yield: {predicted_yield*1000}')
         if crop=='Bajra':
             predicted_yield = predict_yield3(area, temperature, precipitation, humidity,soil_type, district, crop, season)
-            st.write(f'\nBajra predicted yield: {predicted_yield}')
+            st.write(f'\nBajra predicted yield: {predicted_yield*1000}')
         if predicted_yield > max_yield:
             max_yield = predicted_yield
             best_crop = crop
@@ -245,7 +245,7 @@ if nav == 'Automated Input':
     if st.button("Recommend Crop"):
         get_best_crop.clear()
         best_crop , max_yield = get_best_crop()
-        st.success(f'\nCrop with the highest predicted yield: {best_crop} ({max_yield})')
+        st.success(f'\nCrop with the highest predicted yield: {best_crop} ({max_yield*1000})')
 
 elif nav == 'Manual Input':
     area = st.number_input("Enter the Area: ",value=0)
@@ -259,6 +259,6 @@ elif nav == 'Manual Input':
     if st.button("Recommend Crop"):
         get_best_crop.clear()
         best_crop , max_yield = get_best_crop()
-        st.success(f'\nCrop with the highest predicted yield: {best_crop} ({max_yield})')
+        st.success(f'\nCrop with the highest predicted yield: {best_crop} ({max_yield*1000})')
 
 
